@@ -12,30 +12,20 @@
     h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
 
     /* YouTube video background */
-    .video-bg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      pointer-events: none;
-    }
     .video-wrapper {
       position: absolute;
       inset: 0;
       overflow: hidden;
+      z-index: 0;
     }
-    .video-wrapper iframe {
+    #ytplayer {
       position: absolute;
       top: 50%;
       left: 50%;
       width: 100vw;
-      height: 56.25vw; /* 16:9 */
+      height: 56.25vw;
       min-height: 100vh;
-      min-width: 177.77vh; /* 16:9 */
+      min-width: 177.77vh;
       transform: translate(-50%, -50%);
       pointer-events: none;
     }
@@ -94,15 +84,9 @@
 
   <!-- HERO -->
   <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
-    <!-- YouTube video background -->
+    <!-- YouTube video background via IFrame API -->
     <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/ZaEypCLpM04?autoplay=1&mute=1&loop=1&playlist=ZaEypCLpM04&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-        title="The Prince Team"
-      ></iframe>
+      <div id="ytplayer"></div>
     </div>
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black/55 z-10"></div>
@@ -398,6 +382,49 @@
     </div>
   </section>
 
+  <!-- INSTAGRAM -->
+  <section id="instagram" class="py-28 px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-[#c9a96e] text-xs tracking-[0.3em] uppercase mb-4">Stay Connected</p>
+        <h2 class="text-5xl font-light mb-4">Follow the Journey</h2>
+        <a href="https://www.instagram.com/nyprinceteam/" target="_blank" class="text-sm text-gray-400 tracking-widest hover:text-[#c9a96e] transition-colors duration-300">@nyprinceteam</a>
+      </div>
+
+      <!-- Instagram embeds grid -->
+      <div class="grid md:grid-cols-3 gap-6 items-start">
+        <div class="fade-in flex justify-center">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/CUInx5ZvvFp/"
+            data-instgrm-version="14"
+            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:100%; min-width:280px; width:100%;">
+          </blockquote>
+        </div>
+        <!-- Placeholder cards for remaining posts -->
+        <div class="fade-in bg-gray-100 aspect-square flex flex-col items-center justify-center gap-3 group cursor-pointer hover:bg-gray-200 transition-colors duration-300">
+          <a href="https://www.instagram.com/nyprinceteam/" target="_blank" class="flex flex-col items-center gap-3 w-full h-full justify-center">
+            <svg class="w-10 h-10 text-gray-400 group-hover:text-[#c9a96e] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <span class="text-xs tracking-widest uppercase text-gray-400 group-hover:text-[#c9a96e] transition-colors duration-300">View on Instagram</span>
+          </a>
+        </div>
+        <div class="fade-in bg-gray-100 aspect-square flex flex-col items-center justify-center gap-3 group cursor-pointer hover:bg-gray-200 transition-colors duration-300">
+          <a href="https://www.instagram.com/nyprinceteam/" target="_blank" class="flex flex-col items-center gap-3 w-full h-full justify-center">
+            <svg class="w-10 h-10 text-gray-400 group-hover:text-[#c9a96e] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <span class="text-xs tracking-widest uppercase text-gray-400 group-hover:text-[#c9a96e] transition-colors duration-300">View on Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 fade-in">
+        <a href="https://www.instagram.com/nyprinceteam/" target="_blank" class="inline-block text-xs tracking-widest uppercase border border-black px-10 py-4 hover:bg-black hover:text-white transition-colors duration-300">
+          Follow @nyprinceteam
+        </a>
+      </div>
+    </div>
+    <script async src="//www.instagram.com/embeds.js"></script>
+  </section>
+
   <!-- FOOTER -->
   <footer class="bg-black text-white py-12 px-8">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
@@ -415,16 +442,47 @@
     </div>
   </footer>
 
+  <!-- YouTube IFrame API -->
   <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+
+    var ytPlayer;
+    function onYouTubeIframeAPIReady() {
+      ytPlayer = new YT.Player('ytplayer', {
+        videoId: 'ZaEypCLpM04',
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          loop: 1,
+          playlist: 'ZaEypCLpM04',
+          controls: 0,
+          showinfo: 0,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          disablekb: 1,
+          fs: 0
+        },
+        events: {
+          onReady: function(e) {
+            e.target.mute();
+            e.target.playVideo();
+          },
+          onStateChange: function(e) {
+            if (e.data === YT.PlayerState.PAUSED) e.target.playVideo();
+          }
+        }
+      });
+    }
+
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(el => {
-        if (el.isIntersecting) {
-          el.target.classList.add('visible');
-        }
+        if (el.isIntersecting) el.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
