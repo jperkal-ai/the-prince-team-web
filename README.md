@@ -1,12 +1,20 @@
 # The Prince Team — Website
 
-A professional real estate website for **Prince Dockery** and The Prince Team at Corcoran.
+A professional real estate website for **Prince Dockery** and The Prince Team at The Corcoran Group.
 
 ---
 
-## Purpose
+## About The Prince Team
 
-A modern, elegant website that showcases The Prince Team's expertise, listings, and brand — giving buyers and sellers a trusted destination to connect with the team.
+**Prince Dockery** is a Licensed Associate Real Estate Broker at Corcoran's SoHo office. Over 15 years in the industry, he and his team have built an extraordinary track record:
+
+- **$500M+** career sales volume
+- **800+** sale and rental transactions
+- **Top 1%** of real estate agents nationally (RealTrends)
+- High-profile clients including Carmelo Anthony, Tracy Morgan, Lady Gaga, and Adam Levine
+- Joined Corcoran in 2023 after Compass, Town Residential, and Douglas Elliman
+
+**Markets served:** Downtown Manhattan (primary), Brooklyn, Westchester County, the Hamptons, Upstate New York
 
 ---
 
@@ -14,13 +22,14 @@ A modern, elegant website that showcases The Prince Team's expertise, listings, 
 
 ### 1. Hero
 - Full-width banner with a compelling headline
-- Agent/team photo
-- Primary CTA buttons: "Search Listings" and "Work With Us"
+- Prince's photo or team photo
+- CTA buttons: "Search Listings" and "Work With Us"
 
 ### 2. About Prince
-- Bio and background
-- Years of experience and credentials
-- What makes The Prince Team different
+- Bio highlighting 15 years of experience, $500M+ in sales
+- Background in consulting, retail, and event planning
+- Known for working with athletes and entertainers
+- Thorough, success-driven approach
 
 ### 3. The Team
 - Team member photos, names, and roles
@@ -28,27 +37,44 @@ A modern, elegant website that showcases The Prince Team's expertise, listings, 
 ### 4. Services
 - Buying
 - Selling
-- Investment properties
+- New Development
+- Investment Properties
+- Rental
 
-### 5. Current Listings
-- Featured properties with photos, price, beds/baths, and location
+### 5. Markets
+- Downtown Manhattan
+- Brooklyn
+- Westchester County
+- The Hamptons
+- Upstate New York
+
+### 6. Current Listings
+- Featured properties with photos, price, beds/baths, and neighborhood
 - Manually curated (no IDX integration in v1)
 
-### 6. Sold / Track Record
-- Past sales to demonstrate experience and results
+### 7. Track Record
+- $500M+ in career sales
+- 800+ transactions
+- Top 1% nationally
+- Notable past sales / new development projects (373 Bergen St, 434 Throop Ave, Brooklyn)
 
-### 7. Testimonials
+### 8. Press & Recognition
+- Mann Report feature
+- Inman News coverage
+- RealTrends ranking
+
+### 9. Testimonials
 - Client reviews and quotes
 
-### 8. Contact
+### 10. Contact
 - Contact form (name, email, phone, message)
-- Direct phone and email
-- Social media links
+- Phone and email
+- Social links: Instagram (@nyprinceteam), YouTube (ThePrinceGroupNYC)
 
-### 9. Footer
+### 11. Footer
 - Logo
 - Navigation links
-- Corcoran affiliation badge
+- Corcoran Group affiliation
 
 ---
 
@@ -63,30 +89,43 @@ A modern, elegant website that showcases The Prince Team's expertise, listings, 
 
 ## Design Direction
 
-- Elegant, luxury feel
-- Clean typography, lots of white space
-- Professional photography-forward layout
-- Mobile responsive
+- Luxury, high-end feel befitting a $500M+ producer
+- Clean typography, generous white space
+- Photography-forward — properties and Prince front and center
+- Black, white, and gold palette (TBD with client)
+- Fully mobile responsive
+
+---
+
+## Social & Press
+
+- Instagram: [@nyprinceteam](https://www.instagram.com/nyprinceteam/)
+- YouTube: [ThePrinceGroupNYC](https://www.youtube.com/@ThePrinceGroupNYC)
+- Corcoran Profile: [The Prince Team](https://www.corcoran.com/real-estate-agents/detail/team/the-prince-team/526)
+- Press: [Inman News](https://www.inman.com/2023/02/08/the-prince-team-reins-supreme-in-move-from-compass-to-corcoran/) | [Mann Report](https://www.mannpublications.com/mannreport/2023/02/06/the-prince-team-crowns-corcoran-as-their-new-brokerage/)
 
 ---
 
 ## Getting Started
 
 ```bash
-npm install
+npx create-next-app@latest . --typescript --tailwind --app
 npm run dev
 ```
 
 ---
 
-## To Do (v1)
+## v1 Build Checklist
 
-- [ ] Set up Next.js project
+- [ ] Scaffold Next.js + Tailwind project
 - [ ] Build Hero section
-- [ ] Build About section
+- [ ] Build About Prince section
 - [ ] Build Team section
 - [ ] Build Services section
+- [ ] Build Markets section
 - [ ] Build Listings section
+- [ ] Build Track Record / Stats section
+- [ ] Build Press section
 - [ ] Build Testimonials section
 - [ ] Build Contact form
 - [ ] Deploy to Vercel
